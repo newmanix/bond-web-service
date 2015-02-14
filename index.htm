@@ -86,6 +86,10 @@ function loadAJAX(cat)
 
 function bondJSON(data){
 	//$('#output').text(JSON.stringify(data));  //uncomment to view raw output
+	//JSON.stringify({ uno: 1, dos: 2 }, null, '\t');
+	$('#output').text(JSON.stringify(data, null, '\t'));
+	
+	
 	var header = data.title;
 	$('#filmtitle').html(header);
 	$.each(data.films, function(i,item){
