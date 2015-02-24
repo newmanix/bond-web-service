@@ -33,7 +33,7 @@
  */
 -->
 <head>
-<title>filter3.htm - Bond Web Consumer Demo</title>
+<title>filter-final.htm - Bond Web Consumer Demo</title>
 <style>
 body {font-family:georgia;}
 #films {
@@ -140,14 +140,6 @@ function getFilmsByActor(item)
 	{//
 		if(actor_checkboxes[x].value===item.Bond){return true;}
 	}
-	
-	
-	/*
-	had to use raw array here!! - could not use jquery each!!
-	$(actor_checkboxes).each(function(){
-		if(this.value===item.Bond){return true;}
-	});
-	*/
 	return false; //default if nothing inside found to match
 }
 
@@ -188,12 +180,7 @@ function getFilmInfo(item, indx, list)
 </head>
 	<body>
 	<h1>Bond Web Service Demo</h1>
-	<!-- 
-		we'll be installing a form here.  No need for links!
-		<a href="year" class="category">Bond Films By Year</a><br />
-		<a href="box" class="category">Bond Films By International Box Office Totals</a>
-	-->	
-	<p>Filtering added</p>
+	<p>Adds filtering utilizing underscore.js</p>
 	<form id="bond_form">
 	<div id="bond_sort">
 		<h3>Sort Order</h3>
