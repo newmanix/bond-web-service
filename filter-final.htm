@@ -158,10 +158,32 @@ function getFilmsOverBoxOffice(item) {
 function forceFloat(num)
 {//inputs a formatted number and force it to parse to a float
 	//http://stackoverflow.com/questions/19647636/regular-expression-to-strip-all-non-numeric-characters-except-scientific-notatio
-
+	
+	if(num==='')
+	{//empty, return 0
+		return 0;
+	}
+	
+	var testNum = parseFloat(num);
+	//check to see if NOT isNAN
+	if(!isNaN(testNum))
+	{//mission accomplished!
+		return testNum;
+	
+	}
+	
+	//didn't work?  continue...
 	num = num.replace(/(\de[-+]\d)|[^-+0-9.]/gi, '$1');  //strip non-numerics except "."
-	return parseFloat(num);	//change to a float
-
+	testNum = parseFloat(num);
+	
+	
+	if(!isNaN(testNum))
+	{//mission accomplished!
+		return testNum;
+	
+	}
+	
+	return 0; //got this far? zero!
 }
 
 function getFilmInfo(item, indx, list) 
